@@ -93,7 +93,10 @@ class _MyHomePageState extends State<_MyHomePage> {
                     Container(
                       child: Text(
                         "Remaining to next stage",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                        ),
                       ),
                     ),
                     Container(

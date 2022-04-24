@@ -54,6 +54,8 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
 
+
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -63,6 +65,7 @@ flutter:
   assets:
     - assets/images/
     - assets/audios/
+    
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

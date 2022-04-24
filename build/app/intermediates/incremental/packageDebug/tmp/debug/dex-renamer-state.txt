@@ -1,4 +1,4 @@
-#Sun Apr 24 16:36:47 TRT 2022
+#Sun Apr 24 20:22:38 TRT 2022
 base.0=C\:\\Users\\ismai\\Desktop\\Flutter\\click_and_go\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
