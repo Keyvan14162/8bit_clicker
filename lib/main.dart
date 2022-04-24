@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Clicker",
       theme: ThemeData(
-        primarySwatch: Colors.teal,
-      ),
+          //primarySwatch: Colors.teal,
+          ),
       home: _MyHomePage(),
     );
   }
@@ -46,11 +46,13 @@ class _MyHomePageState extends State<_MyHomePage> {
   var multiply = 1;
 
   var cookiePadding = 0.0;
-  var bonus_time = 0;
 
   var slidingText = "CLICK AND GO ";
   var slidingTextSize = 45.0;
   var slidingTextVelocity = 100.0;
+
+  var linearProgressIndicatorValue = 0.0;
+  var remainingValueToNextLLevel = 100;
 
   var cookieImg = Image.asset(
     "./assets/images/cookie2.png",
@@ -75,7 +77,7 @@ class _MyHomePageState extends State<_MyHomePage> {
         title: Text("Click'n Win"),
       ),*/
       body: Container(
-        color: Colors.yellow,
+        color: Colors.white,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,11 +91,20 @@ class _MyHomePageState extends State<_MyHomePage> {
                 Column(
                   children: [
                     Container(
-                      child: Text("new level"),
+                      child: Text(
+                        "Remaining to next stage",
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                      ),
                     ),
                     Container(
-                      child: Text("here"),
-                    )
+                      width: MediaQuery.of(context).size.width,
+                      height: 30,
+                      child: LinearProgressIndicator(
+                        value: linearProgressIndicatorValue,
+                        color: Color.fromARGB(255, 13, 138, 196),
+                        backgroundColor: Color.fromARGB(82, 0, 103, 163),
+                      ),
+                    ),
                   ],
                 )
               ],
@@ -108,9 +119,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                 children: [
                   // Cookie
                   Container(
-                    decoration: BoxDecoration(
-                      color: Colors.yellow,
-                    ),
+                    decoration: BoxDecoration(),
                     child: GestureDetector(
                       onTap: () {
                         //cookieClick();
@@ -180,7 +189,7 @@ class _MyHomePageState extends State<_MyHomePage> {
     // IDK WHY BUT THIS SHOWS THE TRUE
     // TOUCHED LOCATION
     x -= 15;
-    y -= 95;
+    y -= 55;
     // or user the local position method to get the offset
     print(details.localPosition);
     //print("tap down " + x.toString() + ", " + y.toString());
@@ -190,13 +199,13 @@ class _MyHomePageState extends State<_MyHomePage> {
 
     setState(() {
       _score += multiply;
-      print("Cookie click : $_score");
     });
     audioPlayer.play("audios/hit.mp3");
-    await Future.delayed(Duration(milliseconds: 200));
+    await Future.delayed(Duration(milliseconds: 200), () {
+      x = -100;
+      y = -100;
+    });
     // hit img hiding
-    x = -100;
-    y = -100;
 
     cookiePadding -= 5;
     // slidingTextSize -= 3;
@@ -205,8 +214,10 @@ class _MyHomePageState extends State<_MyHomePage> {
     // her clickte cagirsi 10 da 1 ihtimalle bonus ciksin
     _showRandomBonus();
 
-    await Future.delayed(Duration(milliseconds: 10000));
-    _score = 0;
+    //await Future.delayed(Duration(milliseconds: 10000));
+    //_score = 0;
+
+    changeProgressBar();
     setState(() {});
   }
 
@@ -222,27 +233,40 @@ class _MyHomePageState extends State<_MyHomePage> {
     // hit img hiding
     bonusx = -100;
     bonusy = -100;
-    await Future.delayed(Duration(milliseconds: 5000));
-    multiply -= 2;
+    await Future.delayed(Duration(milliseconds: 5000), () {
+      multiply -= 2;
 
-    slidingTextVelocity -= 100;
-    _changeSlidingText();
+      slidingTextVelocity -= 100;
+      _changeSlidingText();
+    });
 
-    bonus_time = 20;
+    setState(() {});
+  }
 
+  void changeProgressBar() {
+    linearProgressIndicatorValue +=
+        (1 / remainingValueToNextLLevel) + multiply / 100;
+    print(linearProgressIndicatorValue);
+    if (linearProgressIndicatorValue >= 1.0) {
+      linearProgressIndicatorValue = 0.0;
+      remainingValueToNextLLevel = remainingValueToNextLLevel + 200;
+    }
     setState(() {});
   }
 
   void _showRandomBonus() async {
     // Random().nextInt(10) == 1
     if (true) {
-      bonusx = 21 + Random().nextInt(369).toDouble();
-      bonusy = 10 + Random().nextInt(370).toDouble();
+      bonusx = 21 + Random().nextInt(360).toDouble();
+      bonusy = 10 + Random().nextInt(360).toDouble();
     }
     // ekranda 2sn kalsın
-    await Future.delayed(Duration(milliseconds: 20000));
-    bonusx = -100;
-    bonusy = -100;
+
+    await Future.delayed(Duration(milliseconds: 20000), () {
+      bonusx = -100;
+      bonusy = -100;
+    });
+
     setState(() {});
   }
 
