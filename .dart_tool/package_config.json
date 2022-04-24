@@ -56,6 +56,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "fading_edge_scrollview",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fading_edge_scrollview-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0",
       "packageUri": "lib/",
@@ -118,6 +124,12 @@
     {
       "name": "lints",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "marquee",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/marquee-2.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -284,7 +296,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-23T14:20:40.837531Z",
+  "generated": "2022-04-24T13:04:13.481107Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }

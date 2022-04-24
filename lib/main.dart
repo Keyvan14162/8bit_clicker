@@ -2,8 +2,11 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:deneme/slidig_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:marquee/marquee.dart';
+import 'package:deneme/bottom_widget.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -35,17 +38,19 @@ class _MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<_MyHomePage> {
-  int _clickCount = 0;
+  int _score = 0;
   var x = 0.0;
   var y = 0.0;
   var bonusx = -100.0;
   var bonusy = -100.0;
   var multiply = 1;
-  var cookieMarginL = 20.0;
-  var cookieMarginR = 20.0;
-  var cookieMarginT = 5.0;
-  var cookieMarginB = 0.0;
+
+  var cookiePadding = 0.0;
   var bonus_time = 0;
+
+  var slidingText = "CLICK AND GO ";
+  var slidingTextSize = 45.0;
+  var slidingTextVelocity = 100.0;
 
   var cookieImg = Image.asset(
     "./assets/images/cookie2.png",
@@ -65,9 +70,10 @@ class _MyHomePageState extends State<_MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /*
       appBar: AppBar(
         title: Text("Click'n Win"),
-      ),
+      ),*/
       body: Container(
         color: Colors.yellow,
         child: Column(
@@ -75,6 +81,23 @@ class _MyHomePageState extends State<_MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // top bar
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      child: Text("new level"),
+                    ),
+                    Container(
+                      child: Text("here"),
+                    )
+                  ],
+                )
+              ],
+            ),
             Container(
               child: Stack(
                 alignment: Alignment.center,
@@ -96,9 +119,8 @@ class _MyHomePageState extends State<_MyHomePage> {
                           _onTapDown(details),
                       child: Container(
                         //widh height
-                        padding: EdgeInsets.all(0),
-                        margin: EdgeInsets.fromLTRB(cookieMarginL,
-                            cookieMarginT, cookieMarginR, cookieMarginB),
+                        padding: EdgeInsets.all(cookiePadding),
+                        margin: EdgeInsets.fromLTRB(20, 5, 20, 0),
 
                         //color: Colors.orange,
                         child: cookieImg,
@@ -139,69 +161,11 @@ class _MyHomePageState extends State<_MyHomePage> {
                 ],
               ),
             ),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: Container(
-                      width: 2000,
-                      height: 2000,
-                      margin: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Expanded(
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    alignment: Alignment.center,
-                    margin: EdgeInsets.fromLTRB(4, 2, 4, 2),
-                    child: Text(
-                      "Click Count: ${_clickCount}",
-                      style: TextStyle(fontSize: 25),
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    alignment: Alignment.center,
-                    margin: EdgeInsets.fromLTRB(4, 2, 4, 2),
-                    child: Text(
-                      "${multiply}X",
-                      style: TextStyle(fontSize: 25),
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            SlidingTextWidget(
+                slidingText: slidingText,
+                slidingTextSize: slidingTextSize,
+                slidingTextVelocity: slidingTextVelocity),
+            ScoreWidget(score: _score, multiply: multiply),
           ],
         ),
       ),
@@ -221,13 +185,12 @@ class _MyHomePageState extends State<_MyHomePage> {
     print(details.localPosition);
     //print("tap down " + x.toString() + ", " + y.toString());
 
-    cookieMarginL += 5;
-    cookieMarginR += 5;
-    cookieMarginT += 5;
+    cookiePadding += 5;
+    //slidingTextSize += 3;
 
     setState(() {
-      _clickCount += multiply;
-      print("Cookie click : $_clickCount");
+      _score += multiply;
+      print("Cookie click : $_score");
     });
     audioPlayer.play("audios/hit.mp3");
     await Future.delayed(Duration(milliseconds: 200));
@@ -235,19 +198,24 @@ class _MyHomePageState extends State<_MyHomePage> {
     x = -100;
     y = -100;
 
-    cookieMarginL -= 5;
-    cookieMarginR -= 5;
-    cookieMarginT -= 5;
+    cookiePadding -= 5;
+    // slidingTextSize -= 3;
 
     setState(() {});
     // her clickte cagirsi 10 da 1 ihtimalle bonus ciksin
     _showRandomBonus();
+
+    await Future.delayed(Duration(milliseconds: 10000));
+    _score = 0;
+    setState(() {});
   }
 
   void _onBonusTapDown(TapDownDetails details) async {
     setState(() {
-      _clickCount++;
+      _score++;
       multiply += 2;
+      slidingTextVelocity += 100;
+      _changeSlidingText();
     });
     // farklı bi ses calsin bonushit.mp3
     audioPlayer.play("audios/hit.mp3");
@@ -256,6 +224,9 @@ class _MyHomePageState extends State<_MyHomePage> {
     bonusy = -100;
     await Future.delayed(Duration(milliseconds: 5000));
     multiply -= 2;
+
+    slidingTextVelocity -= 100;
+    _changeSlidingText();
 
     bonus_time = 20;
 
@@ -273,5 +244,32 @@ class _MyHomePageState extends State<_MyHomePage> {
     bonusx = -100;
     bonusy = -100;
     setState(() {});
+  }
+
+  void _changeSlidingText() async {
+    if (multiply == 1) {
+      slidingText = "WARM UP";
+    }
+    if (multiply == 3) {
+      slidingText = "EASY GOIN";
+    }
+    if (multiply == 5) {
+      slidingText = "GETTING HARD";
+    }
+    if (multiply == 7) {
+      slidingText = "DIRTY FINGERS";
+    }
+    if (multiply == 9) {
+      slidingText = "FASTER!!!!";
+    }
+    if (multiply == 11) {
+      slidingText = "SPEED OF LIGHT";
+    }
+    if (multiply == 13) {
+      slidingText = "HUMAN'T";
+    }
+    if (multiply == 15) {
+      slidingText = "GODLIKE";
+    }
   }
 }
