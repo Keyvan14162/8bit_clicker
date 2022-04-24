@@ -86,7 +86,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                   // Cookie
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.orange,
+                      color: Colors.yellow,
                     ),
                     child: GestureDetector(
                       onTap: () {
