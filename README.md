@@ -1,3 +1,3 @@
-# click_and_go
+# 8Bit Clicker
 
 still working on...
