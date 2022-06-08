@@ -2,6 +2,24 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "animated_text_kit",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "archive",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/archive-3.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "args",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/args-2.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "async",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2",
       "packageUri": "lib/",
@@ -86,10 +104,10 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "flutter_lints",
-      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4",
+      "name": "flutter_native_splash",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_native_splash-2.1.6",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.15"
     },
     {
       "name": "flutter_test",
@@ -116,16 +134,22 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "image",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/image-3.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "js",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
-      "name": "lints",
-      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
+      "name": "lint",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lint-1.8.2",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.15"
     },
     {
       "name": "marquee",
@@ -148,6 +172,12 @@
     {
       "name": "meta",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "palette_generator",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/palette_generator-0.3.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -198,6 +228,12 @@
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "petitparser",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-4.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
     },
     {
       "name": "platform",
@@ -266,6 +302,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "universal_io",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/universal_io-2.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "uuid",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/uuid-3.0.6",
       "packageUri": "lib/",
@@ -290,13 +332,25 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "xml",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/xml-5.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "yaml",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-3.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "deneme",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-04-27T06:04:54.499496Z",
+  "generated": "2022-06-08T18:11:18.392386Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }

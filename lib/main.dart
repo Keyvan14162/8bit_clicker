@@ -2,11 +2,15 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:deneme/data/boss_names.dart';
+import 'package:deneme/progress_bar.dart';
 import 'package:deneme/slidig_text_widget.dart';
+import 'package:deneme/boss_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:marquee/marquee.dart';
-import 'package:deneme/bottom_widget.dart';
+import 'package:deneme/score_widget.dart';
+import 'package:palette_generator/palette_generator.dart';
 
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,36 +46,55 @@ class _MyHomePageState extends State<_MyHomePage> {
   int _score = 0;
   var x = -100.0;
   var y = -100.0;
-  var bonusx = -100.0;
-  var bonusy = -100.0;
+  var bonus1x = -100.0;
+  var bonus1y = -100.0;
+  var bonus2x = -100.0;
+  var bonus2y = -100.0;
   var multiply = 1;
-  var stage = 0;
+  var currentStage = 1;
 
   var cookiePadding = 0.0;
 
-  var slidingText = "CLICK AND GO ";
+  var bossName = "Boss1";
+
+  var slidingText = " 8 BIT CLICKER ";
   var slidingTextSize = 45.0;
   var slidingTextVelocity = 100.0;
 
-  var linearProgressIndicatorValue = 0.0;
+  var linearProgressIndicatorValue = 1.0;
   var remainingValueToNextLLevel = 100;
+  double progressDecrease = 0.1;
+
+  var stageCount = BossNames.BOSS_NAMES.length - 1;
 
   var backgroundColor = Colors.white;
 
-  var cookieImg = Image.asset(
-    "./assets/images/cookie2.png",
-    fit: BoxFit.cover,
-  );
+  late PaletteGenerator _generator;
+  Color slidingTextBackgroundColor = Colors.red;
+
   var hitImg = Image.asset(
     "./assets/images/hit.png",
-    // fit: BoxFit.cover,
   );
-  var bonusImg = Image.asset(
-    "./assets/images/milk.png",
-    // fit: BoxFit.cover,
+  var bonus1Img = Image.asset(
+    "./assets/images/bonus1.png",
+  );
+  var bonus2Img = Image.asset(
+    "./assets/images/bonus2.png",
   );
 
   final audioPlayer = AudioCache();
+
+  final random = Random();
+
+  @override
+  void initState() {
+    super.initState();
+    playBackgroundMusic();
+    Timer.periodic(Duration(milliseconds: 500), (timer) {
+      changeBackgroundColor();
+    });
+    print(stageCount);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,29 +113,14 @@ class _MyHomePageState extends State<_MyHomePage> {
               children: [
                 Column(
                   children: [
-                    Container(
-                      child: Text(
-                        "Stage:$stage",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
                     // Progress Bar
-                    Container(
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [Colors.purple, Colors.blue])),
-                      width: MediaQuery.of(context).size.width,
-                      height: 30,
-                      child: LinearProgressIndicator(
-                        value: linearProgressIndicatorValue,
-                        color: Color.fromARGB(47, 255, 255, 255),
-                        backgroundColor: Color.fromARGB(82, 0, 103, 163),
-                      ),
+                    ProgressBar(
+                        linearProgressIndicatorValue:
+                            linearProgressIndicatorValue),
+                    // stage bar
+                    StageBar(
+                      bossName: bossName,
+                      linearIndicatorValue: linearProgressIndicatorValue,
                     ),
                   ],
                 )
@@ -120,39 +128,60 @@ class _MyHomePageState extends State<_MyHomePage> {
             ),
             // Cookie Part
             Container(
+              decoration: BoxDecoration(),
               child: Stack(
                 alignment: Alignment.center,
                 textDirection: TextDirection.rtl,
                 fit: StackFit.loose,
-                // overflow: Overflow.visible,
                 clipBehavior: Clip.antiAlias,
                 children: [
                   // Cookie
                   Container(
-                    decoration: BoxDecoration(),
                     child: GestureDetector(
                       onTapDown: (TapDownDetails details) =>
                           _onTapDown(details),
                       child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height / 1.8,
                         padding: EdgeInsets.all(cookiePadding),
                         margin: EdgeInsets.fromLTRB(20, 5, 20, 0),
-                        child: cookieImg,
+                        child: Image.asset(
+                          "./assets/images/stage ($currentStage).png",
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
 
-                  // bonusimg
+                  // bonus1img
                   Positioned(
-                    top: bonusy,
-                    left: bonusx,
+                    top: bonus1y,
+                    left: bonus1x,
                     child: Container(
                       child: GestureDetector(
                         onTapDown: (TapDownDetails details) =>
-                            _onBonusTapDown(details),
+                            onBonusTapDown(details, 1),
                         child: Container(
                           width: 60,
                           height: 60,
-                          child: bonusImg,
+                          child: bonus1Img,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  // bonus2img
+                  Positioned(
+                    top: bonus2y,
+                    left: bonus2x,
+                    child: Container(
+                      child: GestureDetector(
+                        onTapDown: (TapDownDetails details) =>
+                            onBonusTapDown(details, 2),
+                        child: Container(
+                          width: 60,
+                          height: 60,
+                          child: bonus2Img,
                         ),
                       ),
                     ),
@@ -172,12 +201,23 @@ class _MyHomePageState extends State<_MyHomePage> {
               ),
             ),
 
+            SizedBox(
+              height: 10,
+            ),
+
             // Sliding Text
             SlidingTextWidget(
                 slidingText: slidingText,
                 slidingTextSize: slidingTextSize,
-                slidingTextVelocity: slidingTextVelocity),
-            ScoreWidget(score: _score, multiply: multiply),
+                slidingTextVelocity: slidingTextVelocity,
+                backgroundColor: slidingTextBackgroundColor),
+
+            // Bottom score and multiply
+            ScoreWidget(
+              score: _score,
+              currentStage: currentStage,
+              stageCount: stageCount,
+            ),
           ],
         ),
       ),
@@ -185,121 +225,125 @@ class _MyHomePageState extends State<_MyHomePage> {
   }
 
   void _onTapDown(TapDownDetails details) async {
+    await audioPlayer.play("audios/hit.mp3");
+
     x = details.globalPosition.dx;
     y = details.globalPosition.dy;
     // IDK WHY BUT THIS SHOWS THE TRUE
     // TOUCHED LOCATION
     x -= 15;
-    y -= 55;
-    // or user the local position method to get the offset
-    print(details.localPosition);
-    //print("tap down " + x.toString() + ", " + y.toString());
+    y -= 75;
 
     cookiePadding += 5;
-    //slidingTextSize += 3;
 
-    backgroundColor =
-        Colors.primaries[Random().nextInt(Colors.primaries.length)];
+    changeBackgroundColor();
 
-    setState(() {
-      _score += multiply;
-    });
-    audioPlayer.play("audios/hit.mp3");
-    await Future.delayed(Duration(milliseconds: 200), () {
+    _score++;
+
+    // hit img hiding
+    await Future.delayed(Duration(milliseconds: 50), () {
       x = -100;
       y = -100;
     });
-    // hit img hiding
 
     cookiePadding -= 5;
-    // slidingTextSize -= 3;
+    //setState(() {});
 
-    setState(() {});
-    if (Random().nextInt(10) == 1) {
-      _showRandomBonus();
-    }
     // her clickte cagirsi 10 da 1 ihtimalle bonus ciksin
-
-    //await Future.delayed(Duration(milliseconds: 10000));
-    //_score = 0;
-
     changeProgressBar();
     setState(() {});
+    // show bonus1
+    if (Random().nextInt(10) == 1) {
+      _showRandomBonus(1);
+    }
+    // show bonus2
+    if (Random().nextInt(20) == 1) {
+      _showRandomBonus(2);
+    }
   }
 
-  void _onBonusTapDown(TapDownDetails details) async {
-    setState(() {
-      _score++;
-      multiply += 2;
-      slidingTextVelocity += 100;
-      _changeSlidingText();
-    });
+  void onBonusTapDown(TapDownDetails details, int bonusNumber) {
     // farklı bi ses calsin bonushit.mp3
-    audioPlayer.play("audios/hit.mp3");
+    audioPlayer.play("audios/bonusHit.mp3");
+
     // hit img hiding
-    bonusx = -100;
-    bonusy = -100;
-    await Future.delayed(Duration(milliseconds: 5000), () {
-      multiply -= 2;
+    bonus1x = -100;
+    bonus1y = -100;
+    bonus2x = -100;
+    bonus2y = -100;
+    _score++;
+    if (bonusNumber == 1) linearProgressIndicatorValue -= 0.1;
+    if (bonusNumber == 2) linearProgressIndicatorValue -= 0.2;
+    setState(() {});
+  }
 
-      slidingTextVelocity -= 100;
+  void changeProgressBar() async {
+    linearProgressIndicatorValue -= progressDecrease;
+    // linearProgressIndicatorValue = 0.0;
+    if (linearProgressIndicatorValue <= 0.0) {
+      await audioPlayer.play("audios/bossDeath.mp3");
+      if (currentStage == stageCount) currentStage = 0;
+      progressDecrease = 1.0 / (currentStage * 10);
+      linearProgressIndicatorValue = 1.0;
+      currentStage++;
       _changeSlidingText();
-    });
-
-    setState(() {});
-  }
-
-  void changeProgressBar() {
-    linearProgressIndicatorValue +=
-        (1 / remainingValueToNextLLevel) + multiply / 100;
-    print(linearProgressIndicatorValue);
-    if (linearProgressIndicatorValue >= 1.0) {
-      linearProgressIndicatorValue = 0.0;
-      remainingValueToNextLLevel = remainingValueToNextLLevel + 200;
+      findPngColor();
     }
     setState(() {});
   }
 
-  void _showRandomBonus() async {
-    // Random().nextInt(10) == 1
-    if (true) {
-      bonusx = 21 + Random().nextInt(360).toDouble();
-      bonusy = 10 + Random().nextInt(360).toDouble();
-    }
-    // ekranda 2sn kalsın
+  // bonus1, bonus2
+  void _showRandomBonus(int bonusNumber) {
+    if (bonusNumber == 1) {
+      bonus1x = 21 + Random().nextInt(360).toDouble();
+      bonus1y = 10 + Random().nextInt(360).toDouble();
 
-    await Future.delayed(Duration(milliseconds: 20000), () {
-      bonusx = -100;
-      bonusy = -100;
-    });
+      // ekranda 2sn kalsın
+      Future.delayed(
+        Duration(milliseconds: 20000),
+        () {
+          bonus1x = -100;
+          bonus1y = -100;
+        },
+      );
+    }
+    if (bonusNumber == 2) {
+      bonus2x = 21 + Random().nextInt(360).toDouble();
+      bonus2y = 10 + Random().nextInt(360).toDouble();
+
+      // ekranda 2sn kalsın
+      Future.delayed(Duration(milliseconds: 20000), () {
+        bonus1x = -100;
+        bonus1y = -100;
+      });
+    }
 
     setState(() {});
   }
 
-  void _changeSlidingText() async {
-    if (multiply == 1) {
-      slidingText = "WARM UP";
-    }
-    if (multiply == 3) {
-      slidingText = "EASY GOIN";
-    }
-    if (multiply == 5) {
-      slidingText = "GETTING HARD";
-    }
-    if (multiply == 7) {
-      slidingText = "DIRTY FINGERS";
-    }
-    if (multiply == 9) {
-      slidingText = "FASTER!!!!";
-    }
-    if (multiply == 11) {
-      slidingText = "SPEED OF LIGHT";
-    }
-    if (multiply == 13) {
-      slidingText = "HUMAN'T";
-    }
-    if (multiply == 15) {
-      slidingText = "GODLIKE";
-    }
+  void _changeSlidingText() {
+    bossName = BossNames.BOSS_NAMES[currentStage];
+    slidingText = BossNames.BOSS_DIALOGUES[currentStage];
+  }
+
+  void playBackgroundMusic() {
+    audioPlayer.loop("audios/background.mp3");
+  }
+
+  void changeBackgroundColor() {
+    backgroundColor = Color.fromRGBO(
+      random.nextInt(256),
+      random.nextInt(256),
+      random.nextInt(256),
+      1,
+    );
+    setState(() {});
+  }
+
+  void findPngColor() async {
+    _generator = await PaletteGenerator.fromImageProvider(
+      AssetImage("assets/images/stage (${currentStage}).png"),
+    );
+    slidingTextBackgroundColor = _generator.dominantColor!.color;
   }
 }
