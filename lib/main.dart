@@ -9,7 +9,11 @@ import 'package:marquee/marquee.dart';
 import 'package:deneme/bottom_widget.dart';
 
 void main(List<String> args) {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky,
+      overlays: [SystemUiOverlay.top]).then(
+    (_) => runApp(MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,12 +21,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("MyApp build worked");
     return MaterialApp(
       title: "Clicker",
-      theme: ThemeData(
-          //primarySwatch: Colors.teal,
-          ),
+      theme: ThemeData(),
       home: _MyHomePage(),
     );
   }
@@ -39,11 +40,12 @@ class _MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<_MyHomePage> {
   int _score = 0;
-  var x = 0.0;
-  var y = 0.0;
+  var x = -100.0;
+  var y = -100.0;
   var bonusx = -100.0;
   var bonusy = -100.0;
   var multiply = 1;
+  var stage = 0;
 
   var cookiePadding = 0.0;
 
@@ -54,6 +56,8 @@ class _MyHomePageState extends State<_MyHomePage> {
   var linearProgressIndicatorValue = 0.0;
   var remainingValueToNextLLevel = 100;
 
+  var backgroundColor = Colors.white;
+
   var cookieImg = Image.asset(
     "./assets/images/cookie2.png",
     fit: BoxFit.cover,
@@ -63,7 +67,7 @@ class _MyHomePageState extends State<_MyHomePage> {
     // fit: BoxFit.cover,
   );
   var bonusImg = Image.asset(
-    "./assets/images/hit.png",
+    "./assets/images/milk.png",
     // fit: BoxFit.cover,
   );
 
@@ -72,18 +76,14 @@ class _MyHomePageState extends State<_MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*
-      appBar: AppBar(
-        title: Text("Click'n Win"),
-      ),*/
       body: Container(
-        color: Colors.white,
+        color: backgroundColor,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // top bar
+            // Top Bar
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               mainAxisSize: MainAxisSize.max,
@@ -92,19 +92,25 @@ class _MyHomePageState extends State<_MyHomePage> {
                   children: [
                     Container(
                       child: Text(
-                        "Remaining to next stage",
+                        "Stage:$stage",
                         style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                        ),
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
+                    // Progress Bar
                     Container(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: [Colors.purple, Colors.blue])),
                       width: MediaQuery.of(context).size.width,
                       height: 30,
                       child: LinearProgressIndicator(
                         value: linearProgressIndicatorValue,
-                        color: Color.fromARGB(255, 13, 138, 196),
+                        color: Color.fromARGB(47, 255, 255, 255),
                         backgroundColor: Color.fromARGB(82, 0, 103, 163),
                       ),
                     ),
@@ -112,6 +118,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                 )
               ],
             ),
+            // Cookie Part
             Container(
               child: Stack(
                 alignment: Alignment.center,
@@ -124,17 +131,11 @@ class _MyHomePageState extends State<_MyHomePage> {
                   Container(
                     decoration: BoxDecoration(),
                     child: GestureDetector(
-                      onTap: () {
-                        //cookieClick();
-                      },
                       onTapDown: (TapDownDetails details) =>
                           _onTapDown(details),
                       child: Container(
-                        //widh height
                         padding: EdgeInsets.all(cookiePadding),
                         margin: EdgeInsets.fromLTRB(20, 5, 20, 0),
-
-                        //color: Colors.orange,
                         child: cookieImg,
                       ),
                     ),
@@ -145,16 +146,13 @@ class _MyHomePageState extends State<_MyHomePage> {
                     top: bonusy,
                     left: bonusx,
                     child: Container(
-                      //width: 30,
-                      //height: 30,
                       child: GestureDetector(
-                        onTap: () {},
                         onTapDown: (TapDownDetails details) =>
                             _onBonusTapDown(details),
                         child: Container(
-                          width: 30,
-                          height: 30,
-                          child: hitImg,
+                          width: 60,
+                          height: 60,
+                          child: bonusImg,
                         ),
                       ),
                     ),
@@ -173,6 +171,8 @@ class _MyHomePageState extends State<_MyHomePage> {
                 ],
               ),
             ),
+
+            // Sliding Text
             SlidingTextWidget(
                 slidingText: slidingText,
                 slidingTextSize: slidingTextSize,
@@ -183,8 +183,6 @@ class _MyHomePageState extends State<_MyHomePage> {
       ),
     );
   }
-
-  //void cookieClick() async {}
 
   void _onTapDown(TapDownDetails details) async {
     x = details.globalPosition.dx;
@@ -200,6 +198,9 @@ class _MyHomePageState extends State<_MyHomePage> {
     cookiePadding += 5;
     //slidingTextSize += 3;
 
+    backgroundColor =
+        Colors.primaries[Random().nextInt(Colors.primaries.length)];
+
     setState(() {
       _score += multiply;
     });
@@ -214,8 +215,10 @@ class _MyHomePageState extends State<_MyHomePage> {
     // slidingTextSize -= 3;
 
     setState(() {});
+    if (Random().nextInt(10) == 1) {
+      _showRandomBonus();
+    }
     // her clickte cagirsi 10 da 1 ihtimalle bonus ciksin
-    _showRandomBonus();
 
     //await Future.delayed(Duration(milliseconds: 10000));
     //_score = 0;
