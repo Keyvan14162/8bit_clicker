@@ -21,7 +21,7 @@
 18-->[androidx.core:core:1.6.0] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\122df2e57d294d1a53db26bbc3b813c1\core-1.6.0\AndroidManifest.xml:24:18-86
 19        android:debuggable="true"
 20        android:icon="@mipmap/ic_launcher"
-21        android:label="deneme" >
+21        android:label="8Bit Clicker" >
 22        <activity
 23            android:name="com.example.deneme.MainActivity"
 24            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
