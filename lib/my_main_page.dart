@@ -1,5 +1,9 @@
 import 'dart:async';
 import 'dart:math';
+import 'dart:io';
+import 'package:deneme/score_storage.dart';
+import 'package:flutter/foundation.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:deneme/data/boss_names.dart';
 import 'package:deneme/progress_bar.dart';
@@ -9,17 +13,29 @@ import 'package:flutter/material.dart';
 import 'package:deneme/score_widget.dart';
 import 'package:palette_generator/palette_generator.dart';
 
+int _score = 0;
+
 class MyMainPage extends StatefulWidget {
-  const MyMainPage({
+  MyMainPage({
     Key? key,
   }) : super(key: key);
+
+  final ScoreStorage cs = ScoreStorage();
 
   @override
   State<MyMainPage> createState() => MyMainPageState();
 }
 
 class MyMainPageState extends State<MyMainPage> {
-  int _score = 0;
+  MyMainPageState() {}
+
+  Future<File> _increamentScore() {
+    setState(() {
+      _score++;
+    });
+    return widget.cs.writeScore(_score);
+  }
+
   var x = -100.0;
   var y = -100.0;
   var bonus1x = -100.0;
@@ -72,6 +88,11 @@ class MyMainPageState extends State<MyMainPage> {
         changeBackgroundColor();
       },
     );
+    widget.cs.readScore().then((value) {
+      setState(() {
+        _score = value;
+      });
+    });
   }
 
   @override
@@ -104,7 +125,7 @@ class MyMainPageState extends State<MyMainPage> {
                 )
               ],
             ),
-            // Cookie Part
+            // Boss Part
             Container(
               decoration: BoxDecoration(),
               child: Stack(
@@ -113,7 +134,7 @@ class MyMainPageState extends State<MyMainPage> {
                 fit: StackFit.loose,
                 clipBehavior: Clip.antiAlias,
                 children: [
-                  // Cookie
+                  // Boss
                   Container(
                     child: GestureDetector(
                       onTapDown: (TapDownDetails details) =>
@@ -125,7 +146,7 @@ class MyMainPageState extends State<MyMainPage> {
                         margin: EdgeInsets.fromLTRB(20, 5, 20, 0),
                         child: Image.asset(
                           "./assets/images/stage ($currentStage).png",
-                          fit: BoxFit.cover,
+                          fit: BoxFit.contain,
                         ),
                       ),
                     ),
@@ -216,7 +237,9 @@ class MyMainPageState extends State<MyMainPage> {
 
     changeBackgroundColor();
 
-    _score++;
+    // OLMAZSA GERI AC
+    // _score++;
+    _increamentScore();
 
     // hit img hiding
     await Future.delayed(
@@ -230,6 +253,7 @@ class MyMainPageState extends State<MyMainPage> {
     cookiePadding -= 5;
 
     changeProgressBar();
+
     setState(() {});
     // show bonus1
     if (Random().nextInt(10) == 1) {

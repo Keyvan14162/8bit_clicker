@@ -1,4 +1,4 @@
-#Thu Jun 09 01:07:49 TRT 2022
-base.0=C\:\\Users\\ismai\\Desktop\\click_and_go\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Thu Jun 09 19:08:44 TRT 2022
+base.0=C\:\\Users\\ismai\\Desktop\\8bit_clicker\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
