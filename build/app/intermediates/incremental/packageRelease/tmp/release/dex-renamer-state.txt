@@ -1,0 +1,4 @@
+#Thu Dec 08 16:59:23 TRT 2022
+base.0=C\:\\Users\\ismai\\Desktop\\flutter_projects\\8bit_clicker\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
