@@ -42,7 +42,7 @@ INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\s
 INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:2:5-33
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:2:5-43
 		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\debug\AndroidManifest.xml
 	android:versionName

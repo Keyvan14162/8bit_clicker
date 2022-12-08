@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.deneme"
+    package="com.ismailkeyvan.bit_clicker"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -20,7 +20,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="8Bit Clicker" >
         <activity
-            android:name="com.example.deneme.MainActivity"
+            android:name="com.ismailkeyvan.bit_clicker.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:exported="true"
             android:hardwareAccelerated="true"

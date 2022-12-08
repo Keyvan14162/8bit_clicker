@@ -1,4 +1,4 @@
-#Thu Dec 08 13:21:22 TRT 2022
+#Thu Dec 08 17:30:20 TRT 2022
 base.0=C\:\\Users\\ismai\\Desktop\\flutter_projects\\8bit_clicker\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
