@@ -1,14 +1,12 @@
 android.content.res.Resources#getIdentifier present: true
 Web content present: false
 Referenced Strings:
-  $
   $activityFilters
   $newLayoutInfo
   $splitPairFilters
   $splitRule
   $splitsWithActivity
   $this$$receiver
-  %s
   %s.%sParcelizer
   .Companion
   .immediate
@@ -28,6 +26,7 @@ Referenced Strings:
   Active
   ActivityFilter
   ActivityRule
+  AppBundleLocaleChanges
   AppLifecycleState.detached
   AppLifecycleState.inactive
   AppLifecycleState.paused
@@ -38,6 +37,7 @@ Referenced Strings:
   BITMAP
   BITMAP_MASKABLE
   BLOCKING
+  BOLD_TEXT
   BOTH
   BOTTOM_OVERLAYS
   BanParcelableUsage
@@ -46,7 +46,6 @@ Referenced Strings:
   Brightness.dark
   Brightness.light
   C::
-  CANCELLED
   CHARACTERS
   CLICK
   CLIP_PATH
@@ -136,8 +135,8 @@ Referenced Strings:
   HAS_ENABLED_STATE
   HAS_IMPLICIT_SCROLLING
   HAS_TOGGLED_STATE
-  HC_PLATFORM_VIEW
   HEAVY_IMPACT
+  HIGH_CONTRAST
   HINGE
   HORIZONTAL
   HapticFeedback.vibrate
@@ -166,6 +165,7 @@ Referenced Strings:
   IS_KEYBOARD_KEY
   IS_LINK
   IS_LIVE_REGION
+  IS_MULTILINE
   IS_OBSCURED
   IS_READ_ONLY
   IS_SELECTED
@@ -223,6 +223,7 @@ Referenced Strings:
   ON_ANY
   ON_CREATE
   ON_DESTROY
+  ON_OFF_SWITCH_LABELS
   ON_PAUSE
   ON_RESUME
   ON_START
@@ -252,8 +253,8 @@ Referenced Strings:
   P9:
   PARKING
   PASTE
-  PENDING
   PHONE
+  PHYSICAL_DISPLAY_PLATFORM_VIEW
   PLAIN_TEXT
   POLL_FAILED
   PORTRAIT_DOWN
@@ -267,12 +268,13 @@ Referenced Strings:
   PathProviderPlugin
   PlatformChannel
   PlatformPlugin
+  PlatformViewWrapper
   PlatformViewsChannel
   PlatformViewsController
   PlayerMode.LOW_LATENCY
   PlayerMode.MEDIA_PLAYER
-  PrivateApi
   R:
+  REDUCE_MOTION
   RELEASE
   REMOVED_TASK
   REMOVE_FROZEN
@@ -305,10 +307,13 @@ Referenced Strings:
   SendQueued
   SettingsChannel
   SidecarCompat
+  SpellCheck.initiateSpellCheck
+  SpellCheckChannel
   SplitPairFilter
   SplitPairRule
   SplitPlaceholderRule
   SplitRuleResolution
+  SwitchIntDef
   SyntheticAccessor
   SystemChannel
   SystemChrome.restoreSystemUIOverlays
@@ -389,14 +394,15 @@ Referenced Strings:
   URL
   UTF8
   V:
-  VD_PLATFORM_VIEW
   VERTICAL
+  VIRTUAL_DISPLAY_PLATFORM_VIEW
   VISIBLE_PASSWORD
   WORDS
   WindowInfoTrackerCallbackAdapter.kt
   WindowInfoTrackerImpl.kt
   WindowServer
   WrongConstant
+  ZJJ
   _bounds
   _consensus
   _cur
@@ -412,7 +418,6 @@ Referenced Strings:
   _resumed
   _reusableCancellableContinuation
   _state
-  a
   acc
   accessibility
   action
@@ -433,6 +438,7 @@ Referenced Strings:
   addressLocality
   addressRegion
   addressState
+  alarms
   alias
   allScroll
   alwaysUse24HourFormat
@@ -469,7 +475,6 @@ Referenced Strings:
   auto
   autocorrect
   autofill
-  b
   background
   background_mode
   base
@@ -488,6 +493,7 @@ Referenced Strings:
   blockingTasksInBuffer
   boolean
   bounds
+  brieflyShowPassword
   buffer
   byte
   bytes
@@ -508,10 +514,11 @@ Referenced Strings:
   cleartextTrafficPermitted
   click
   clipboard
+  code
   codePoint
   collect
   collection
-  com.google.common.base.Strings
+  com.google.android.inputmethod.latin
   commonPool
   comparator
   completion
@@ -540,9 +547,10 @@ Referenced Strings:
   creditCardNumber
   creditCardSecurityCode
   currentDisplay
-  d
   dark
+  dart_entrypoint_args
   data
+  dcim
   decimal
   decorate
   defaultDisplay
@@ -555,6 +563,13 @@ Referenced Strings:
   description
   destination
   destroy_engine_with_activity
+  details
+  dev.flutter.pigeon.PathProviderApi.ge...
+  dev.flutter.pigeon.PathProviderApi.ge...
+  dev.flutter.pigeon.PathProviderApi.ge...
+  dev.flutter.pigeon.PathProviderApi.ge...
+  dev.flutter.pigeon.PathProviderApi.ge...
+  dev.flutter.pigeon.PathProviderApi.ge...
   deviceId
   deviceState
   dimen
@@ -564,10 +579,11 @@ Referenced Strings:
   displayFeature.rect
   displayFeatures
   dispose
+  documents
   domain
   double
+  downloads
   duckAudio
-  e
   earpieceOrSpeakersToggle
   editingValue
   element
@@ -589,7 +605,6 @@ Referenced Strings:
   extendedPostalCode
   extensionCallback
   extent
-  f
   false
   familyName
   feature
@@ -606,6 +621,7 @@ Referenced Strings:
   flutter/accessibility
   flutter/deferredcomponent
   flutter/isolate
+  flutter/keydata
   flutter/keyevent
   flutter/lifecycle
   flutter/localization
@@ -615,6 +631,7 @@ Referenced Strings:
   flutter/platform_views
   flutter/restoration
   flutter/settings
+  flutter/spellcheck
   flutter/system
   flutter/textinput
   flutter_assets
@@ -627,8 +644,6 @@ Referenced Strings:
   gender
   get
   getAppBounds
-  getApplicationDocumentsDirectory
-  getApplicationSupportDirectory
   getBounds
   getChildId
   getCurrentPosition
@@ -637,9 +652,6 @@ Referenced Strings:
   getDisplayFeatures
   getDisplayInfo
   getDuration
-  getExternalCacheDirectories
-  getExternalStorageDirectories
-  getJavaLangAccess
   getModule
   getNextMatch
   getParentNodeId
@@ -649,19 +661,15 @@ Referenced Strings:
   getRealSize
   getResId
   getSourceNodeId
-  getStackTraceDepth
-  getStackTraceElement
-  getStorageDirectory
   getSuppressed
-  getTemporaryDirectory
   getUncaughtExceptionPreHandler
   getWindowLayoutInfo
   givenName
   grab
   grabbing
-  guava.concurrent.generate_cancellatio...
-  h.a.c.a.b$c
-  h.a.c.a.i
+  h.s.j.a.a
+  h.t.d.a
+  h.t.e.a
   handled
   handler
   height
@@ -669,9 +677,6 @@ Referenced Strings:
   hintText
   hints
   hybrid
-  i.s.j.a.a
-  i.t.d.a
-  i.t.e.a
   id
   image
   inFlightTasks
@@ -688,8 +693,11 @@ Referenced Strings:
   intent
   invokeSuspend
   io.flutter.Entrypoint
+  io.flutter.EntrypointUri
   io.flutter.InitialRoute
+  io.flutter.embedding.android.EnableIm...
   io.flutter.embedding.android.EnableSk...
+  io.flutter.embedding.android.LeakVM
   io.flutter.embedding.android.NormalTheme
   io.flutter.embedding.android.OldGenHe...
   io.flutter.embedding.android.SplashSc...
@@ -731,6 +739,9 @@ Referenced Strings:
   java.util.Set
   java.util.concurrent.ForkJoinPool
   job
+  kDown
+  kRepeat
+  kUp
   key
   keyCode
   keydown
@@ -812,7 +823,6 @@ Referenced Strings:
   mNextServedView
   mServedView
   main
-  makeBackgroundTaskQueue
   mediaPlayer
   mediaPlayers
   memoryPressure
@@ -825,10 +835,13 @@ Referenced Strings:
   mode
   moduleName
   move
+  movies
   mp
+  music
   name
   namePrefix
   nameSuffix
+  nativeSpellCheckServiceDefined
   navigation_bar_height
   newConfig
   newDeviceState
@@ -840,11 +853,13 @@ Referenced Strings:
   noDrop
   nodeId
   none
+  notifications
   null
   obscureText
   oemFeature
   oemFeature.bounds
   off
+  offset
   oldText
   on
   onActivityResult
@@ -889,6 +904,7 @@ Referenced Strings:
   phoneNational
   phoneNumber
   phoneNumberDevice
+  pictures
   placeholderIntent
   plainCodePoint
   platformBrightness
@@ -900,7 +916,7 @@ Referenced Strings:
   playerId
   playingRoute
   plugins
-  plugins.flutter.io/path_provider_android
+  podcasts
   point
   popRoute
   position
@@ -920,7 +936,6 @@ Referenced Strings:
   primaryColor
   primitiveFqNames.values
   producerIndex
-  productId
   push
   pushRoute
   put
@@ -950,7 +965,10 @@ Referenced Strings:
   resizeUpRightDownLeft
   respectSilence
   response
+  result
   resume
+  ringtones
+  root
   route
   rule
   ruleComponent
@@ -986,6 +1004,7 @@ Referenced Strings:
   setUrl
   setVolume
   short
+  show_password
   sidecarAdapter
   sidecarCompat
   sidecarDeviceState
@@ -1011,8 +1030,6 @@ Referenced Strings:
   streetAddress
   string
   suffix
-  sun.misc.JavaLangAccess
-  sun.misc.SharedSecrets
   surface
   synchronizeToNativeViewHierarchy
   systemNavigationBarColor
@@ -1030,19 +1047,21 @@ Referenced Strings:
   text/plain
   textCapitalization
   textScaleFactor
+  textservices
   texture
-  this
   this$0
   throwable
   throwableMethods
   token
   tooltip
+  top
   touch
   tracker
   transform
   transformer
   transition_animation_scale
   transparent
+  true
   truncated
   type
   uninstallDeferredComponent
@@ -1053,7 +1072,6 @@ Referenced Strings:
   username
   usesVirtualDisplay
   value
-  vendorId
   verticalText
   view
   viewFocused
@@ -1297,11 +1315,11 @@ attr:activityAction:2130771968,
    attr:android_endY:-1,
    attr:android_tileMode:-1,
    attr:android_offset:-1
-Skipped unused resource res/drawable/notification_bg.xml: 532 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/drawable/notification_bg_low.xml: 532 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/drawable/notification_icon_background.xml: 372 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/drawable/notification_tile_bg.xml: 304 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/drawable-v21/notification_action_background.xml: 1180 bytes (replaced with small dummy file of size 104 bytes)
+Skipped unused resource res/drawable/notification_bg.xml: 783 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/drawable/notification_bg_low.xml: 785 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/drawable/notification_icon_background.xml: 334 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/drawable/notification_tile_bg.xml: 313 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/drawable-v21/notification_action_background.xml: 2424 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/drawable-mdpi-v4/notification_bg_low_normal.9.png: 215 bytes (replaced with small dummy file of size 77 bytes)
 Skipped unused resource res/drawable-mdpi-v4/notification_bg_low_pressed.9.png: 223 bytes (replaced with small dummy file of size 77 bytes)
 Skipped unused resource res/drawable-mdpi-v4/notification_bg_normal.9.png: 215 bytes (replaced with small dummy file of size 77 bytes)
@@ -1317,17 +1335,17 @@ Skipped unused resource res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png:
 Skipped unused resource res/drawable-xhdpi-v4/notification_bg_normal.9.png: 221 bytes (replaced with small dummy file of size 77 bytes)
 Skipped unused resource res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png: 247 bytes (replaced with small dummy file of size 77 bytes)
 Skipped unused resource res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png: 138 bytes (replaced with small dummy file of size 67 bytes)
-Skipped unused resource res/layout/custom_dialog.xml: 612 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout/notification_action.xml: 1092 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout-v17/notification_action.xml: 1156 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout/notification_action_tombstone.xml: 1268 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout-v17/notification_action_tombstone.xml: 1332 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout-v16/notification_template_custom_big.xml: 3012 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout-v17/notification_template_custom_big.xml: 3208 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout/notification_template_icon_group.xml: 392 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout/notification_template_part_chronometer.xml: 440 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout/notification_template_part_time.xml: 440 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout-v21/notification_action.xml: 1052 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout-v21/notification_action_tombstone.xml: 1228 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout-v21/notification_template_custom_big.xml: 2456 bytes (replaced with small dummy file of size 104 bytes)
-Skipped unused resource res/layout-v21/notification_template_icon_group.xml: 988 bytes (replaced with small dummy file of size 104 bytes)
+Skipped unused resource res/layout/custom_dialog.xml: 850 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout/notification_action.xml: 2311 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout-v17/notification_action.xml: 2473 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout/notification_action_tombstone.xml: 2772 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout-v17/notification_action_tombstone.xml: 2934 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout-v16/notification_template_custom_big.xml: 8676 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout-v17/notification_template_custom_big.xml: 9585 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout/notification_template_icon_group.xml: 563 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout/notification_template_part_chronometer.xml: 635 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout/notification_template_part_time.xml: 622 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout-v21/notification_action.xml: 2231 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout-v21/notification_action_tombstone.xml: 2692 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout-v21/notification_template_custom_big.xml: 6595 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout-v21/notification_template_icon_group.xml: 2439 bytes (replaced with small dummy file of size 9 bytes)

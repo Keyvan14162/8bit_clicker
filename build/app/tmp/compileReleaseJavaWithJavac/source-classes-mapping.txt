@@ -1,4 +1,4 @@
 io/flutter/plugins/GeneratedPluginRegistrant.java
  io.flutter.plugins.GeneratedPluginRegistrant
-com/example/deneme/BuildConfig.java
- com.example.deneme.BuildConfig
+com/ismailkeyvan/bit_clicker/BuildConfig.java
+ com.ismailkeyvan.bit_clicker.BuildConfig

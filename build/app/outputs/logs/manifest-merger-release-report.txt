@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:3:4-33:19
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:3:4-33:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.core:core:1.6.0] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\122df2e57d294d1a53db26bbc3b813c1\core-1.6.0\AndroidManifest.xml:24:5-89
@@ -10,20 +10,20 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\is
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\122df2e57d294d1a53db26bbc3b813c1\core-1.6.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:4:9-37
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:4:9-37
 	android:icon
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:6:9-43
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:6:9-43
 	android:name
-		INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:5:9-42
+		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:5:9-42
 manifest
-ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
-MERGED from [:audioplayers] C:\Users\ismai\Desktop\8bit_clicker\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:2:1-9:12
-MERGED from [:path_provider_android] C:\Users\ismai\Desktop\8bit_clicker\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_native_splash] C:\Users\ismai\Desktop\8bit_clicker\build\flutter_native_splash\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
+MERGED from [:audioplayers] C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:2:1-9:12
+MERGED from [:path_provider_android] C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_native_splash] C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\build\flutter_native_splash\intermediates\library_manifest\release\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\ad201fac15a88598107ec645f351f5b4\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.core:core-ktx:1.6.0] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\3e71d298d88fa81568b0d74ff39fd136\jetified-core-ktx-1.6.0\AndroidManifest.xml:2:1-9:12
@@ -42,33 +42,33 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\is
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\c8d7e3b2963d9fc9e8f1cf9aeb870fb3\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\9a0e475eb211916dfa0da9de1d6c02a3\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\5bfc0955e244073bdc8cc139cda5e092\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
 	package
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:2:5-33
-		INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:2:5-43
+		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
-		INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
+		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
-		INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:1-34:12
+		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-sdk
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-MERGED from [:audioplayers] C:\Users\ismai\Desktop\8bit_clicker\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:7:5-44
-MERGED from [:audioplayers] C:\Users\ismai\Desktop\8bit_clicker\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:7:5-44
-MERGED from [:path_provider_android] C:\Users\ismai\Desktop\8bit_clicker\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:path_provider_android] C:\Users\ismai\Desktop\8bit_clicker\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_native_splash] C:\Users\ismai\Desktop\8bit_clicker\build\flutter_native_splash\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_native_splash] C:\Users\ismai\Desktop\8bit_clicker\build\flutter_native_splash\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+MERGED from [:audioplayers] C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:7:5-44
+MERGED from [:audioplayers] C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\build\audioplayers\intermediates\library_manifest\release\AndroidManifest.xml:7:5-44
+MERGED from [:path_provider_android] C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\build\path_provider_android\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_native_splash] C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\build\flutter_native_splash\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_native_splash] C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\build\flutter_native_splash\intermediates\library_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\ad201fac15a88598107ec645f351f5b4\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\ad201fac15a88598107ec645f351f5b4\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
@@ -105,54 +105,54 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\ismai\.gradl
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\9a0e475eb211916dfa0da9de1d6c02a3\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\5bfc0955e244073bdc8cc139cda5e092\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\5bfc0955e244073bdc8cc139cda5e092\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml
-activity#com.example.deneme.MainActivity
-ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:7:9-27:20
+		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml
+activity#com.ismailkeyvan.bit_clicker.MainActivity
+ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:7:9-27:20
 	android:launchMode
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:10:13-43
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:10:13-43
 	android:hardwareAccelerated
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:13:13-47
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:13:13-47
 	android:windowSoftInputMode
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:14:13-55
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:14:13-55
 	android:exported
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:9:13-36
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:9:13-36
 	android:configChanges
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:12:13-163
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:12:13-163
 	android:theme
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:11:13-47
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:11:13-47
 	android:name
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:8:13-41
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:8:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:19:13-22:17
+ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:19:13-22:17
 	android:resource
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:21:15-52
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:21:15-52
 	android:name
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:20:15-70
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:20:15-70
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:23:13-26:29
+ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:23:13-26:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:24:17-68
+ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:24:17-68
 	android:name
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:24:25-66
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:25:17-76
+ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:25:17-76
 	android:name
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:25:27-74
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:25:27-74
 meta-data#flutterEmbedding
-ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:30:9-32:33
+ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:30:9-32:33
 	android:value
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:32:13-30
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:32:13-30
 	android:name
-		ADDED from C:\Users\ismai\Desktop\8bit_clicker\android\app\src\main\AndroidManifest.xml:31:13-44
+		ADDED from C:\Users\ismai\Desktop\flutter_projects\8bit_clicker\android\app\src\main\AndroidManifest.xml:31:13-44
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\ismai\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 	android:required
