@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ismai\\Desktop\\8bit_clicker\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v31\\values-v31.xml",
+            "outputFile": "C:\\Users\\ismai\\Desktop\\flutter_projects\\8bit_clicker\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v31\\values-v31.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ismai\\Desktop\\8bit_clicker\\android\\app\\src\\main\\res\\values-v31\\styles.xml",
+                    "source": "C:\\Users\\ismai\\Desktop\\flutter_projects\\8bit_clicker\\android\\app\\src\\main\\res\\values-v31\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

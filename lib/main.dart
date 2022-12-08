@@ -4,10 +4,7 @@ import 'my_main_page.dart';
 
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky,
-      overlays: [SystemUiOverlay.top]).then(
-    (_) => runApp(MyApp()),
-  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "8Bit Clicker",
       theme: ThemeData(),
       home: MyMainPage(),
