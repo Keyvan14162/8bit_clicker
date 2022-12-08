@@ -2,8 +2,6 @@ import 'dart:async';
 import 'dart:math';
 import 'dart:io';
 import 'package:deneme/score_storage.dart';
-import 'package:flutter/foundation.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:deneme/data/boss_names.dart';
 import 'package:deneme/progress_bar.dart';
