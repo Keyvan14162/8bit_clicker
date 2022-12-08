@@ -1,5 +1,5 @@
 # 8Bit Clicker
 
-Game that you are clicking screen and beat the boss.
+The game where you beat the bosses by clicking on the screen
 
 ![screenshot of game](sample_images/sample1.png)
