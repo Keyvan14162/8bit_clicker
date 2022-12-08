@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.deneme">
+    package="com.ismailkeyvan.8bit_clicker">
    <application
         android:label="8Bit Clicker"
         android:name="${applicationName}"
